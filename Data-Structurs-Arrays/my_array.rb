@@ -8,8 +8,12 @@ class MyArray
     @length
   end
 
+  def [](index)
+    @data[index]
+  end
+
   def to_s
-    puts @data
+    print @data.values
   end
 
   def push(item)
@@ -33,6 +37,18 @@ class MyArray
     @length -= 1
     del_item
   end
+  
+  def reverse
+    len = @length
+    i = 0
+    dup = {}
+    while(len > 0)
+      dup[i] = @data[len-1] 
+      i+=1
+      len-=1
+    end
+    return dup.values
+  end
 end
 
 array = MyArray.new
@@ -44,6 +60,6 @@ array.push(20)
 array.push('hey')
 array.push('welcome')
 array.delete(3)
-array.pop
-array.pop
+puts array[1]
+print array.reverse
 puts(array)
