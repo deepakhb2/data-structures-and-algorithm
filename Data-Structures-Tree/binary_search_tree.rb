@@ -66,39 +66,45 @@ class BinarySearchTree
     parent_node = nil
     while(current_node)
       if(current_node.value == value)
-        if(current_node.right && current_node.right.left)
-          temp_node = current_node.right.left
-          temp_node.left = current_node.left
-          temp_node.right = current_node.right
-          if(parent_node)
-            parent_node.left = temp_node if parent_node.left.value == current_node.value
-            parent_node.right = temp_node if parent_node.right.value == current_node.value
+        if(current_node.right == nil)
+          if(parent_node == nil)
+            @root = current_node.left
+          else
+            if(current_node.value < parent_node.vlaue)
+              parent_node.left = current_node.left
+            else
+              parent_node.right = current_node.left
           end
-          @root = temp_node if current_node.value == @root.value
-          current_node = nil
-        elsif(current_node.right)
-          temp_node = current_node.right
-          if(parent_node)
-            parent_node.left = temp_node if parent_node.left && parent_node.left.value == current_node.value
-            parent_node.right = temp_node if parent_node.right && parent_node.right.value == current_node.value 
+        elsif(current_node.right.left == nil)
+          if(parent_node == nil)
+            @root = current_node.right
+          else
+            if(current_node.value < parent_node.vlaue)
+              parent_node.left = current_node.right
+            else
+              parent_node.right = current_node.right
           end
-          @root = temp_node if current_node.value == @root.value
-          current_node = nil
-        elsif(current_node.left)
-          temp_node = current_node.left
-          if(parent_node)
-            parent_node.left = temp_node if parent_node.left && parent_node.left.value == current_node.value
-            parent_node.right = temp_node if parent_node.right && parent_node.right.value == current_node.value 
-          end
-          @root = temp_node if current_node.value == @root.value
-          current_node = nil
         else
-          if(parent_node)
-            parent_node.left = nil if parent_node.left && parent_node.left.value == current_node.value
-            parent_node.right = nil if parent_node.right && parent_node.right.value == current_node.value 
+          left_most = current_node.right.left
+          left_most_parent = current_node.right
+          while(left_most.left != nil)
+            left_most_parent = left_most
+            left_most = left_most.left
           end
-          @root = nil if current_node.value == @root.value
-          current_node = nil
+
+          left_most_parent.left = leftmost.right
+          left_most.left = current_node.left
+          left_most.right = current_node.right
+
+          if(parent_node == null)
+            @root = leftmost
+          else
+            if(current_node.value < parent_node.value)
+              parent_node.left = left_most
+            else
+              parent_node.right = left_most
+            end
+          end
         end
       elsif(value < current_node.value)
         parent_node = current_node
