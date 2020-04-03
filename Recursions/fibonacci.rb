@@ -24,6 +24,5 @@ def lfibonacci(num)
   return sum
 end
 
-p rfibonacci(6)
 p lfibonacci(6)
-p sfibonacci(6)
+p rfibonacci(6)
