@@ -30,16 +30,18 @@ class Queue
     end
   end
 
-  def dequeue 
-    if(@front)
+  def dequeue
+    if(@length > 1)
       temp_node = @front
       @front = temp_node.next
       temp_node.next = nil      
       @length -= 1
     else
-      p 'Queue is empty'
+      temp_node = @front
+      @front = @rear = nil
+      @length -= 1
     end
-    temp_node.value
+    temp_node.value if temp_node
   end
 
   def values
@@ -61,6 +63,7 @@ class Queue
   end
 end
 
+p 'Queues START'
 queue = Queue.new
 queue.enqueue(1)
 queue.enqueue(2)
@@ -69,3 +72,4 @@ p queue.dequeue
 p queue.dequeue
 p queue.peek
 p "Length: #{queue.length}"
+p 'Queues END'

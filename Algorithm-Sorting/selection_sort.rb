@@ -1,3 +1,7 @@
+# Time complexity:
+# Omega(n^2)
+# Teta(n^2)
+# 
 values = [5,2,4,7,1,3,6]
 print "Input: "
 p values

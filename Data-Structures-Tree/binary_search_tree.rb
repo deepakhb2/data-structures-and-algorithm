@@ -120,6 +120,7 @@ class BinarySearchTree
   end
 end
 
+p 'BST START'
 bst = BinarySearchTree.new
 bst.insert(50)
 bst.insert(45)
@@ -133,3 +134,4 @@ p bst.delete(55)
 p bst.delete(53)
 p bst.delete(60)
 p bst.root
+p 'BST END'
