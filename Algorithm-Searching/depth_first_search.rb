@@ -10,7 +10,7 @@ require_relative '../Data-Structures-Queue/queue'
 # pre_order_dfs_values = [9, 4, 1, 6, 20, 15, 170]
 # post_order_dfs_values = [1, 6, 4, 15, 170, 20, 9]
 class BinarySearchTree
-  def i_dfs_in_order
+  def r_dfs_in_order
     traverse_in_order(@root, [])
   end
 
@@ -25,7 +25,7 @@ class BinarySearchTree
     return values
   end
 
-  def i_dfs_pre_order
+  def r_dfs_pre_order
     traverse_pre_order(@root, [])
   end
 
@@ -40,7 +40,7 @@ class BinarySearchTree
     return values
   end
 
-  def i_dfs_post_order
+  def r_dfs_post_order
     traverse_post_order(@root, [])
   end
 
@@ -65,7 +65,7 @@ binary_tree.insert(170)
 binary_tree.insert(15)
 binary_tree.insert(1)
 p 'DFS START'
-p 'In Order: ', binary_tree.i_dfs_in_order
-p 'Pre Order: ', binary_tree.i_dfs_pre_order
-p 'Post Order: ', binary_tree.i_dfs_post_order
+p 'In Order: ', binary_tree.r_dfs_in_order
+p 'Pre Order: ', binary_tree.r_dfs_pre_order
+p 'Post Order: ', binary_tree.r_dfs_post_order
 p 'DFS END'
