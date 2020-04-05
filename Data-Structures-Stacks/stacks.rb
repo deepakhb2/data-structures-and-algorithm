@@ -36,9 +36,12 @@ stack = Stack.new
 stack.push(1)
 stack.push(2)
 stack.push(3)
-puts stack
-stack.pop
-puts stack
+p 'Lenght: '+ stack.length.to_s
+p stack.pop
+p 'Lenght: '+ stack.length.to_s
 stack.push(4)
 stack.push(5)
-puts stack.peek
+p stack.peek
+p 'Lenght: '+ stack.length.to_s
+p stack.pop
+p 'Lenght: '+ stack.length.to_s

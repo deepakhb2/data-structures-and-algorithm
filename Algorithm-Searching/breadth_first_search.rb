@@ -40,16 +40,6 @@ class BinarySearchTree
     end
     return r_bfs(queue, values)
   end
-
-  def i_dfs
-    values = []
-
-    values
-  end
-
-  def r_dfs(queue, values)
-    values
-  end
 end
 
 binary_tree = BinarySearchTree.new
