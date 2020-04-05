@@ -70,19 +70,21 @@ class BinarySearchTree
           if(parent_node == nil)
             @root = current_node.left
           else
-            if(current_node.value < parent_node.vlaue)
+            if(current_node.value < parent_node.value)
               parent_node.left = current_node.left
             else
               parent_node.right = current_node.left
+            end
           end
         elsif(current_node.right.left == nil)
           if(parent_node == nil)
             @root = current_node.right
           else
-            if(current_node.value < parent_node.vlaue)
+            if(current_node.value < parent_node.value)
               parent_node.left = current_node.right
             else
               parent_node.right = current_node.right
+            end
           end
         else
           left_most = current_node.right.left
@@ -92,12 +94,12 @@ class BinarySearchTree
             left_most = left_most.left
           end
 
-          left_most_parent.left = leftmost.right
+          left_most_parent.left = left_most.right
           left_most.left = current_node.left
           left_most.right = current_node.right
 
-          if(parent_node == null)
-            @root = leftmost
+          if(parent_node == nil)
+            @root = left_most
           else
             if(current_node.value < parent_node.value)
               parent_node.left = left_most
@@ -106,6 +108,7 @@ class BinarySearchTree
             end
           end
         end
+        return current_node.value
       elsif(value < current_node.value)
         parent_node = current_node
         current_node = current_node.left
@@ -123,10 +126,10 @@ bst.insert(45)
 bst.insert(55)
 bst.insert(53)
 bst.insert(60)
-bst.delete(50)
+p bst.delete(50)
 p bst.root.value
-bst.delete(45)
-bst.delete(55)
-bst.delete(53)
-bst.delete(60)
+p bst.delete(45)
+p bst.delete(55)
+p bst.delete(53)
+p bst.delete(60)
 p bst.root
