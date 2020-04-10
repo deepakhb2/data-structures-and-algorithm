@@ -9,11 +9,27 @@ def swap(arr, first_index, second_index)
   arr[second_index] = temp
 end
 
-def partition(arr, pivot, left, right)
+def l_pivot_partition(arr, left, right)
+  pivot = left
+  pivot_elem = arr[pivot]
+  partition_index = left+1 
+
+  (left..right).each do |i|
+    if(arr[i] < pivot_elem)
+      swap(arr, i, partition_index)
+      partition_index += 1
+    end
+  end
+  swap(arr, left, partition_index-1)
+  partition_index-1
+end
+
+def r_pivot_partition(arr, pivot, left, right)
+  pivot = right
   pivot_elem = arr[pivot]
   partition_index = left
 
-  (left...right).each do |i|
+  (left..right).each do |i|
     if(arr[i] < pivot_elem)
       swap(arr, i, partition_index)
       partition_index += 1
@@ -23,16 +39,19 @@ def partition(arr, pivot, left, right)
   partition_index
 end
 
-def quick_sort(arr, left, right)
+def quick_sort(arr, left, right, left_pivot = true)
   len = arr.size
   if(left < right)
-    pivot = right
-    partition_index = partition(arr, pivot, left, right)
-    quick_sort(arr, left, partition_index-1)
-    quick_sort(arr, partition_index+1, right)
+    partition_index = l_pivot_partition(arr, left, right) if left_pivot
+    partition_index = l_pivot_partition(arr, left, right) unless left_pivot
+    quick_sort(arr, left, partition_index-1, left_pivot)
+    quick_sort(arr, partition_index+1, right, left_pivot)
   end
   return arr
 end
 
 p values
-p quick_sort(values, 0, values.size-1)
+p "Sort using first element as pivot: "
+p quick_sort(values, 0, values.size-1, true)
+p "Sort using last element as pivot: "
+p quick_sort(values, 0, values.size-1, false)
