@@ -1,4 +1,5 @@
 =begin
+ref: https://www.youtube.com/watch?v=XSdr_O-XVRQ
 Values 1 to n where n is length of array - 1
 Valid Arrays:
 [1,2,3,4]    => -1

@@ -6,7 +6,6 @@ values = [5,2,4,7,1,3,6]
 def merge(left, right)
   result = []
   i, j = 0, 0 
-  p left, right
   while(i < left.size && j < right.size)
     if(left[i] < right[j])
       result.push(left[i])
