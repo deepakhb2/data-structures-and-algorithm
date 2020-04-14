@@ -38,10 +38,10 @@ values = [5,2,4,7,1,3,6]
 def l_bubble_sort(values)
   len = values.size
   if(len > 0)
-    (0..len-2).each do
+    (0...len-1).each do
       swap = false
       i = 0 
-      (1..len-1).each do
+      (1...len).each do
         j = i+1
         if(values[i] > values[j])
           swap = swap(values, i, j)

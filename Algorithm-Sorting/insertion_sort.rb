@@ -3,7 +3,7 @@ print "Input: "
 p values
 
 # Sort using loop
-def l_selection_sort(values)
+def l_insertion_sort(values)
   n = values.size
   (0...n).each do |i|
     (0...i).each do |j|
@@ -16,12 +16,12 @@ def l_selection_sort(values)
 end
 
 print "Result: "
-p l_selection_sort(values)
+p l_insertion_sort(values)
 
 values = [5,2,4,7,1,3,6]
 
 # Sort using recursion
-def r_selection_sort(values, i=0)
+def r_insertion_sort(values, i=0)
   if(i >= values.size)
     return values
   end
@@ -31,9 +31,9 @@ def r_selection_sort(values, i=0)
       values[j], values[i] = values[i], values[j]
     end
   end
-  return r_selection_sort(values, i+1)
+  return r_insertion_sort(values, i+1)
 end
 
 print "Result: "
-p r_selection_sort(values)
+p r_insertion_sort(values)
   
