@@ -21,7 +21,6 @@ def count_subarrays(arr)
       end
     end
     j = i-1
-    p i
     while(j >= 0)
       if(arr[i] > arr[j])
         count += 1
