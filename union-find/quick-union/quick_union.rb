@@ -24,16 +24,7 @@ class QuickUnion
     pr = root(p)
     qr = root(q)
     unless(pr == qr)
-      @values[pr] = qr
+      @values[qr] = @values[pr]
     end    
   end
 end
-
-qf = QuickUnion.new(10)
-p qf.values
-qf.union(4, 3)
-p qf.values
-qf.union(9, 8)
-p qf.values
-qf.union(4, 8)
-p qf.values
