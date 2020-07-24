@@ -1,2 +1,2 @@
 language = "ruby"
-run = ""
+run = "ruby Algorithm-Sorting/bubble_sort.rb"
