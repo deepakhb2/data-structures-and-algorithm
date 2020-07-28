@@ -109,19 +109,20 @@ class LinkedList
   end
 end
 
-
-linked_list = LinkedList.new
-linked_list.append(1)
-linked_list.append(2)
-linked_list.append(3)
-linked_list.append(5)
-p linked_list.length
-p linked_list.values
-linked_list.prepend(0)
-p linked_list.values
-linked_list.insert(4, 4)
-p linked_list.values
-linked_list.remove(4)
-p linked_list.values
-linked_list.reverse
-p linked_list.values
+if $PROGRAM_NAME == __FILE__
+  linked_list = LinkedList.new
+  linked_list.append(1)
+  linked_list.append(2)
+  linked_list.append(3)
+  linked_list.append(5)
+  p linked_list.length
+  p linked_list.values
+  linked_list.prepend(0)
+  p linked_list.values
+  linked_list.insert(4, 4)
+  p linked_list.values
+  linked_list.remove(4)
+  p linked_list.values
+  linked_list.reverse
+  p linked_list.values
+end
