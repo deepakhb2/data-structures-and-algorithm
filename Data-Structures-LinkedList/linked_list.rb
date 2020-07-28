@@ -3,8 +3,8 @@ class Node
   attr_accessor :next
 
   def initialize(value)
-    @value = value 
-    @next = nil 
+    @value = value
+    @next = nil
   end
 end
 
@@ -16,10 +16,10 @@ class LinkedList
     @tail = nil
     @length = 0
   end
-  
+
   def append(value)
     node = Node.new(value)
-    unless @head 
+    unless @head
       @head = node
       @tail = @head
       @length += 1
@@ -51,7 +51,7 @@ class LinkedList
     temp = @head
     while(i<@length)
       if(i==index)
-        node.next = temp.next 
+        node.next = temp.next
         temp.next = node
         @length += 1
       end
@@ -74,7 +74,7 @@ class LinkedList
         temp.next = nil
         @tail = temp
         @length -= 1
-        return 
+        return
       end
       if(i==index-1)
         del_node = temp.next
