@@ -1,4 +1,5 @@
-require_relative './my_array'
+require_relative '../../Data-Structures-Array/my_array'
+
 describe MyArray do
   describe '#initialize' do
     it 'new object with length 0' do
@@ -14,7 +15,7 @@ describe MyArray do
       expect(my_array[0]).to eq(3)
     end
 
-    it 'Pop value to my array' do
+    it 'Pop value from my array' do
       my_array.push(3)
       value = my_array.pop
       expect(value).to eq(3)
