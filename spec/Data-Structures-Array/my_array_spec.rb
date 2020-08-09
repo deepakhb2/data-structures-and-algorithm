@@ -32,14 +32,27 @@ describe MyArray do
       expect(my_array[2]).to eq(4)
     end
 
-    it 'Reverse my array' do
-      my_array.push(1)
-      my_array.push(2)
-      my_array.push(3)
-      my_array.push(4)
-      reverse = my_array.reverse
-      expect(reverse[0]).to eq(4)
-      expect(reverse[3]).to eq(1)
+    context '#Reverse' do
+      let(:my_array) {
+        described_class.new.tap { |ary|
+          ary.push(1)
+          ary.push(2)
+          ary.push(3)
+          ary.push(4)
+        } 
+      }
+
+      it 'Reverse my array' do
+        rev_my_array = my_array.reverse
+        expect(rev_my_array[0]).to eq(4)
+        expect(rev_my_array[3]).to eq(1)
+      end
+
+      it 'Reverse returns new object of my array' do
+        rev_my_array = my_array.reverse
+        expect(rev_my_array.class).to eq(described_class)
+        expect(my_array[0]).to eq(rev_my_array[3])
+      end
     end
   end
 end
