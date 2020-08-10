@@ -8,7 +8,7 @@ describe MyArray do
   end
 
   context 'my array operations' do
-    let(:my_array) { described_class.new } 
+    let(:my_array) { described_class.new }
 
     it 'insert value to my array' do
       my_array.push(3)
@@ -21,7 +21,7 @@ describe MyArray do
       expect(value).to eq(3)
       expect(my_array[0]).to eq(nil)
     end
-    
+
     it 'Delete value from my array' do
       my_array.push(1)
       my_array.push(2)
@@ -39,7 +39,7 @@ describe MyArray do
           ary.push(2)
           ary.push(3)
           ary.push(4)
-        } 
+        }
       }
 
       it 'Reverse my array' do
