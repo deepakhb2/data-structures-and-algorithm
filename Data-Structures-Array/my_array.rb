@@ -1,11 +1,9 @@
 class MyArray
+  attr_reader :length
+  
   def initialize
     @length = 0
     @data = {}
-  end
-
-  def length
-    @length
   end
 
   def [](index)
@@ -24,7 +22,6 @@ class MyArray
   def pop
     last_item = @data[@length-1]
     @data.delete(@length-1)
-    @length -= 1
     last_item
   end
 
@@ -40,26 +37,11 @@ class MyArray
   
   def reverse
     len = @length
-    i = 0
-    dup = {}
+    dup = self.class.new 
     while(len > 0)
-      dup[i] = @data[len-1] 
-      i+=1
+      dup.push(@data[len-1]) 
       len-=1
     end
-    return dup.values
+    return dup
   end
 end
-
-array = MyArray.new
-array.push(3)
-array.pop
-array.push('hi')
-array.push(34)
-array.push(20)
-array.push('hey')
-array.push('welcome')
-array.delete(3)
-puts array[1]
-print array.reverse
-puts(array)
