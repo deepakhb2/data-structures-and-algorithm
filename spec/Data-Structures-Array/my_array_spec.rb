@@ -1,4 +1,4 @@
-require_relative '../../Data-Structures-Array/my_array'
+require_relative '../../lib/Data-Structures-Array/my_array'
 
 describe MyArray do
   describe '#initialize' do

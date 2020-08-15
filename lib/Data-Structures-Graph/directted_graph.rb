@@ -11,7 +11,7 @@ class DirectedGraph
   end
 
   def add_vertex(node)
-    @adjacent_list[node] = {} 
+    @adjacent_list[node] = {}
     @num_nodes += 1
   end
 
@@ -31,7 +31,7 @@ class DirectedGraph
 
   def show_connection
     @adjacent_list.each do |node, edges|
-      print node 
+      print node
       print '--->'
       print edges
       puts ''
@@ -49,13 +49,13 @@ my_graph.add_vertex('5')
 my_graph.add_vertex('6')
 my_graph.add_edge('3', '1', 10)
 my_graph.add_edge('3', '4', 20)
-my_graph.add_edge('4', '2', 15) 
-my_graph.add_edge('4', '5', 5) 
-my_graph.add_edge('5', '4', 5) 
-my_graph.add_edge('2', '1', 8) 
-my_graph.add_edge('1', '2', 8) 
-my_graph.add_edge('1', '0', 10) 
-my_graph.add_edge('0', '2', 20) 
+my_graph.add_edge('4', '2', 15)
+my_graph.add_edge('4', '5', 5)
+my_graph.add_edge('5', '4', 5)
+my_graph.add_edge('2', '1', 8)
+my_graph.add_edge('1', '2', 8)
+my_graph.add_edge('1', '0', 10)
+my_graph.add_edge('0', '2', 20)
 my_graph.add_edge('6', '5', 30)
 p my_graph
 my_graph.show_connection

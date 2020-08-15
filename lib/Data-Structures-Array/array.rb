@@ -3,13 +3,13 @@ strings = ['a','b','c','d']
 
 puts(strings[2])
 
-#push  
+#push
 strings.append('e')      # O(1)
-#pop  
-strings.pop() 
+#pop
+strings.pop()
 strings.pop()            # O(1)
 
-#addfirstelement 
+#addfirstelement
 strings.insert(0,'x')    #O(n)
 
 #splice
