@@ -1,5 +1,3 @@
-require_relative '../../lib/Data-Structures-Array/my_array'
-
 describe MyArray do
   describe '#initialize' do
     it 'new object with length 0' do

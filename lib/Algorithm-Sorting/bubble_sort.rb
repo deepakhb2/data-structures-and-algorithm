@@ -4,6 +4,10 @@
 class BubbleSort
   class << self
     # Solve bubble sort using recursive approach
+    # values: Array with integer elements
+    # count: Counter to terminate recursion starts from 1
+    # swap: Optimise algoritm to check if array is already sorted.
+    #
     def recursive(values, count, swap)
       len = values.size
       if(!swap && len > 0 && count <= len)
@@ -23,7 +27,8 @@ class BubbleSort
       return recursive(values, count, false)
     end
 
-    # Solve buble sort using loop
+    # Solve buble sort using loop/iterators
+    # values: Array of integer values.
     def non_recursive(values)
       len = values.size
       if(len > 0)

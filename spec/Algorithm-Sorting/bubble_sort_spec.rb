@@ -1,5 +1,3 @@
-require_relative '../../lib/Algorithm-Sorting/bubble_sort.rb'
-
 describe BubbleSort do
   let(:values) { [5,2,4,7,1,3,6] }
 
