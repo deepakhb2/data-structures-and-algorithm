@@ -1,7 +1,7 @@
 class InsertionSort
   class << self
     # Sort using recursion
-    def recursive(values, i=0)
+    def recursive(values, i=1)
       return values if i >= values.size
 
       (0...i).each do |j|
@@ -13,7 +13,7 @@ class InsertionSort
     # Sort using loop
     def non_recursive(values)
       n = values.size
-      (0...n).each do |i|
+      (1...n).each do |i|
         (0...i).each do |j|
           if(values[i] < values[j])
             values[j], values[i] = values[i], values[j]

@@ -8,7 +8,7 @@ class BubbleSort
     # count: Counter to terminate recursion starts from 1
     # swap: Optimise algoritm to check if array is already sorted.
     #
-    def recursive(values, count, swap)
+    def recursive(values, count=1, swap=false)
       len = values.size
       if(!swap && len > 0 && count <= len)
         i = 0
