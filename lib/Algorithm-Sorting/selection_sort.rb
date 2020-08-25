@@ -6,9 +6,8 @@ class SelectionSort
   class << self
     def recursive(values, i=0)
       len = values.size
-      if(i >= len)
-        return values
-      end
+      return values if i>=len
+
       j = i+1
       min_index = i
       while(j < len)
@@ -21,7 +20,6 @@ class SelectionSort
       return recursive(values, i+1)
     end
 
-    # Solve bubble sort using loop
     def non_recursive(values)
       len = values.size
       (0...len-1).each do |i|
