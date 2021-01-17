@@ -1,6 +1,9 @@
 =begin
 Write a program to print all permutations of a given string
-A permutation, also called an “arrangement number” or “order,” is a rearrangement of the elements of an ordered list S into a one-to-one correspondence with S itself. A string of length n has n! permutation.
+A permutation, also called an “arrangement number” or “order,” is a
+rearrangement of the elements of an ordered list S into a one-to-one
+correspondence with S itself. A string of length n has n! permutation.
+
 Source: Mathword(http://mathworld.wolfram.com/Permutation.html)
 
 Below are the permutations of string ABC.
@@ -22,3 +25,18 @@ end
 
 a = ['a', 'b', 'c']
 permutation(a, 0, a.size-1)
+
+
+# (a, 0, 2)
+#   i = 0 => (a, 1, 2)
+#   i = 1 => (a, 1, 2)
+#   i = 2 => (a, 1, 2)
+# (a, 1, 2)
+#   i = 1 => (a, 2, 2)
+#   i = 2 => (a, 2, 2)
+# (a, 1, 2)
+#   i = 1 => (a, 2, 2)
+#   i = 2 => (a, 2, 2)
+# (a, 1, 2)
+#   i = 1 => (a, 2, 2)
+#   i = 2 => (a, 2, 2)

@@ -15,7 +15,7 @@ class WeightedGraph
       node = min_index(dist, nodes)
       nodes.delete(node)
       @adjacent_list[node].each do |neighbor, distance|
-        min_dist = dist[node] + distance 
+        min_dist = dist[node] + distance
         if min_dist < dist[neighbor]
           dist[neighbor] = min_dist
           shortest_path[neighbor] = shortest_path[node] + [neighbor]
@@ -26,7 +26,7 @@ class WeightedGraph
   end
 
   def min_index(dist, nodes)
-    min_node = '' 
+    min_node = ''
     min = Float::INFINITY
     nodes.each do |node|
       if(min > dist[node])
@@ -49,13 +49,13 @@ my_graph.add_vertex('6')
 my_graph.add_edge('0', '1', 2)
 my_graph.add_edge('1', '2', 2)
 my_graph.add_edge('1', '4', 4)
-my_graph.add_edge('2', '3', 6) 
-my_graph.add_edge('4', '5', 4) 
-my_graph.add_edge('3', '6', 2) 
-my_graph.add_edge('5', '6', 5) 
-my_graph.add_edge('2', '5', 1) 
+my_graph.add_edge('2', '3', 6)
+my_graph.add_edge('4', '5', 4)
+my_graph.add_edge('3', '6', 2)
+my_graph.add_edge('5', '6', 5)
+my_graph.add_edge('2', '5', 1)
 p 'Dijkstras Algorithm: '
 distance, shortest_path = my_graph.dijkstras('0')
 p 'Distance from source: ', distance
 p 'Shortest path from source: ', shortest_path
-p 'Dijkastras Algorithm' 
+p 'Dijkastras Algorithm'
